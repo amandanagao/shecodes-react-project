@@ -1,0 +1,33 @@
+.WeatherSearch form {
+    text-align: center;
+    margin: 40px 0 60px;
+}
+
+.WeatherSearch input {
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    height: 35px;
+    width: 600px;
+}
+
+.WeatherSearch button {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    margin: 0 4px;
+    height: 35px;
+}
+
+.WeatherSearch button:hover {
+    background: #282c34;
+    color: white;
+    cursor: pointer;
+}
+
+.WeatherSearch .temperature {
+    text-align: center;
+}
+
+.WeatherSearch .current-temperature {
+    font-size: 60px;
+}

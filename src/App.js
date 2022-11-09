@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import WeatherSearch from "./WeatherSearch";
+import Forecast from "./Forecast";
+import Units from "./Units";
+
+import Card from "react-bootstrap/Card";
+
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Card>
+                <Card.Header className="header">
+                    Wed, 09/11/2022 - 10:12
+                </Card.Header>
+                <WeatherSearch />
+                <Forecast />
+                <Units />
+            </Card>
+            <div className="coder">
+                <a href="/">Open-source code</a> by Amanda Nagao
+            </div>
+        </div>
+    );
 }
 
 export default App;
