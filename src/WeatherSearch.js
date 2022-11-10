@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
 
 import "./WeatherSearch.css";
 
@@ -19,12 +22,12 @@ export default function WeatherSearch() {
 
     let searchForm = (
         <form onSubmit={handleSubmit}>
-            <input
-                type="search"
-                placeholder="Enter a city"
-                onChange={updateCity}
-            />
-            <button type="submit">Search</button>
+            <InputGroup className="search-form" onChange={updateCity}>
+                <Form.Control placeholder="Enter a city" />
+                <Button type="submit" variant="outline-secondary">
+                    Search
+                </Button>
+            </InputGroup>
         </form>
     );
 
