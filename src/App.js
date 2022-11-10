@@ -6,7 +6,7 @@ import Card from "react-bootstrap/Card";
 
 import "./App.css";
 
-function App() {
+export default function App() {
     return (
         <div className="App">
             <Card className="card">
@@ -30,5 +30,3 @@ function App() {
         </div>
     );
 }
-
-export default App;
