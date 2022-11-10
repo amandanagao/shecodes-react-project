@@ -33,19 +33,19 @@ export default function WeatherSearch() {
             {searchForm}
             <Container>
                 <Row className="justify-content-md-center">
-                    <Col xs lg="3">
+                    <Col xs lg="3" className="current-weather">
                         <h2>Curitiba</h2>
                         <img
                             src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
                             alt="sunny"
                         />
                     </Col>
-                    <Col xs lg="4" className="temperature">
+                    <Col xs lg="4" className="current-weather">
                         <div className="current-temperature">20°</div>
                         <div>23° | 17°</div>
                         <div>Sunny</div>
                     </Col>
-                    <Col xs lg="3">
+                    <Col xs lg="3" className="current-weather">
                         <div>Wind Speed: 3km/h</div>
                         <div>Humidity: 60%</div>
                         <div>Precipitation: 30</div>

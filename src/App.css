@@ -1,3 +1,8 @@
+.App .card {
+    padding-bottom: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
 .App .header {
     text-align: center;
     background-color: #282c34;
@@ -7,6 +12,8 @@
 .App .coder {
     text-align: center;
     font-size: 13px;
+    padding-top: 10px;
+    color: rgb(187, 186, 248);
 }
 
 .App a {

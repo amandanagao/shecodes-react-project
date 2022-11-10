@@ -9,7 +9,7 @@ import "./App.css";
 function App() {
     return (
         <div className="App">
-            <Card>
+            <Card className="card">
                 <Card.Header className="header">
                     Wed, 09/11/2022 - 10:12
                 </Card.Header>
@@ -18,7 +18,14 @@ function App() {
                 <Units />
             </Card>
             <div className="coder">
-                <a href="/">Open-source code</a> by Amanda Nagao
+                <a
+                    href="https://github.com/amandanagao/shecodes-react-project"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    Open-source code
+                </a>{" "}
+                by Amanda Nagao
             </div>
         </div>
     );
