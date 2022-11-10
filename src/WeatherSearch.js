@@ -34,6 +34,7 @@ export default function WeatherSearch() {
             <Container>
                 <Row className="justify-content-md-center">
                     <Col xs lg="3" className="current-weather">
+                        <br />
                         <h2>Curitiba</h2>
                         <img
                             src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
@@ -46,6 +47,7 @@ export default function WeatherSearch() {
                         <div>Sunny</div>
                     </Col>
                     <Col xs lg="3" className="current-weather">
+                        <br />
                         <div>Wind Speed: 3km/h</div>
                         <div>Humidity: 60%</div>
                         <div>Precipitation: 30</div>
