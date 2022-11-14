@@ -11,20 +11,22 @@ import axios from "axios";
 
 export default function WeatherSearch() {
     const [city, setCity] = useState("");
-    const [weather, setWeather] = useState({});
+    const [weather, setWeather] = useState({ ready: false });
 
     function handleSubmit(event) {
         event.preventDefault();
         let apiKey = "b220773ot9b8ef196b845b21b5cabb26";
-        let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+        let unit = "metric";
+        let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${unit}`;
         axios.get(apiUrl).then(displayWeather);
     }
 
     function displayWeather(response) {
         console.log(response);
         setWeather({
+            ready: true,
             name: response.data.city,
-            icon: response.data.condition.icon_url,
+            iconUrl: response.data.condition.icon_url,
             description: response.data.condition.description,
             temperature: Math.round(response.data.temperature.current),
             feels: Math.round(response.data.temperature.feels_like),
@@ -48,29 +50,43 @@ export default function WeatherSearch() {
         </form>
     );
 
-    return (
-        <div className="WeatherSearch">
-            {searchForm}
-            <Container>
-                <Row className="justify-content-md-center">
-                    <Col xs lg="3" className="current-weather more-info">
-                        <h2>{weather.name}</h2>
-                        <img src={weather.icon} alt={weather.description} />
-                    </Col>
-                    <Col xs lg="4" className="current-weather">
-                        <div className="current-temperature">
-                            {weather.temperature}°
-                        </div>
-                        <div>23° | 17°</div>
-                        <div>{weather.description}</div>
-                    </Col>
-                    <Col xs lg="3" className="current-weather more-info">
-                        <div>Feels Like: {weather.feels}°</div>
-                        <div>Wind Speed: {weather.wind} km/h</div>
-                        <div>Humidity: {weather.humidity}%</div>
-                    </Col>
-                </Row>
-            </Container>
-        </div>
-    );
+    if (weather.ready) {
+        return (
+            <div className="WeatherSearch">
+                {searchForm}
+                <Container>
+                    <Row className="justify-content-md-center">
+                        <Col xs lg="3" className="current-weather more-info">
+                            <h2>{weather.name}</h2>
+                            <img
+                                src={weather.iconUrl}
+                                alt={weather.description}
+                            />
+                        </Col>
+                        <Col xs lg="4" className="current-weather">
+                            <div className="current-temperature">
+                                {weather.temperature}°
+                            </div>
+                            <div>23° | 17°</div>
+                            <div className="text-capitalize">
+                                {weather.description}
+                            </div>
+                        </Col>
+                        <Col xs lg="3" className="current-weather more-info">
+                            <div>Feels Like: {weather.feels}°</div>
+                            <div>Wind Speed: {weather.wind}km/h</div>
+                            <div>Humidity: {weather.humidity}%</div>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+        );
+    } else {
+        return (
+            <div className="WeatherSearch">
+                {searchForm}
+                <h3>Loading...</h3>
+            </div>
+        );
+    }
 }
