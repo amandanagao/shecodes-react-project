@@ -2,6 +2,14 @@
     margin-bottom: 20px;
 }
 
+.WeatherSearch header {
+    text-align: center;
+    background-color: #282c34;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
 .WeatherSearch .search-form {
     text-align: center;
     margin: 20px 2px;

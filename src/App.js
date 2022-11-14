@@ -11,9 +11,6 @@ export default function App() {
         <div className="App">
             <div className="container">
                 <Card className="card">
-                    <Card.Header className="header">
-                        Wed, 09/11/2022 - 10:12
-                    </Card.Header>
                     <WeatherSearch />
                     <Forecast />
                     <Units />

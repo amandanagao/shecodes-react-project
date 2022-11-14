@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import axios from "axios";
+import FormattedDate from "./FormattedDate";
+
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -7,7 +10,6 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 
 import "./WeatherSearch.css";
-import axios from "axios";
 
 export default function WeatherSearch() {
     const [city, setCity] = useState("");
@@ -25,6 +27,7 @@ export default function WeatherSearch() {
         console.log(response);
         setWeather({
             ready: true,
+            date: new Date(response.data.time * 1000),
             name: response.data.city,
             iconUrl: response.data.condition.icon_url,
             description: response.data.condition.description,
@@ -53,6 +56,9 @@ export default function WeatherSearch() {
     if (weather.ready) {
         return (
             <div className="WeatherSearch">
+                <header>
+                    <FormattedDate date={weather.date} />
+                </header>
                 {searchForm}
                 <Container>
                     <Row className="justify-content-md-center">
