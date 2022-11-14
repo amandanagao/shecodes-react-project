@@ -28,6 +28,13 @@
 
 .WeatherSearch .current-weather {
     text-align: center;
+    margin-bottom: 10px;
+}
+
+.WeatherSearch .more-info {
+    position: relative;
+    top: 30px;
+    line-height: 2;
 }
 
 .WeatherSearch .current-temperature {

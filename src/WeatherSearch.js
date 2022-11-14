@@ -7,13 +7,30 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 
 import "./WeatherSearch.css";
+import axios from "axios";
 
 export default function WeatherSearch() {
     const [city, setCity] = useState("");
+    const [weather, setWeather] = useState({});
 
     function handleSubmit(event) {
         event.preventDefault();
-        alert(city);
+        let apiKey = "b220773ot9b8ef196b845b21b5cabb26";
+        let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+        axios.get(apiUrl).then(displayWeather);
+    }
+
+    function displayWeather(response) {
+        console.log(response);
+        setWeather({
+            name: response.data.city,
+            icon: response.data.condition.icon_url,
+            description: response.data.condition.description,
+            temperature: Math.round(response.data.temperature.current),
+            feels: Math.round(response.data.temperature.feels_like),
+            humidity: response.data.temperature.humidity,
+            wind: Math.round(response.data.wind.speed),
+        });
     }
 
     function updateCity(event) {
@@ -36,24 +53,21 @@ export default function WeatherSearch() {
             {searchForm}
             <Container>
                 <Row className="justify-content-md-center">
-                    <Col xs lg="3" className="current-weather">
-                        <br />
-                        <h2>Curitiba</h2>
-                        <img
-                            src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-                            alt="sunny"
-                        />
+                    <Col xs lg="3" className="current-weather more-info">
+                        <h2>{weather.name}</h2>
+                        <img src={weather.icon} alt={weather.description} />
                     </Col>
                     <Col xs lg="4" className="current-weather">
-                        <div className="current-temperature">20°</div>
+                        <div className="current-temperature">
+                            {weather.temperature}°
+                        </div>
                         <div>23° | 17°</div>
-                        <div>Sunny</div>
+                        <div>{weather.description}</div>
                     </Col>
-                    <Col xs lg="3" className="current-weather">
-                        <br />
-                        <div>Wind Speed: 3km/h</div>
-                        <div>Humidity: 60%</div>
-                        <div>Precipitation: 30</div>
+                    <Col xs lg="3" className="current-weather more-info">
+                        <div>Feels Like: {weather.feels}°</div>
+                        <div>Wind Speed: {weather.wind} km/h</div>
+                        <div>Humidity: {weather.humidity}%</div>
                     </Col>
                 </Row>
             </Container>
