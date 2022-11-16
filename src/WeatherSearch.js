@@ -28,11 +28,13 @@ export default function WeatherSearch() {
     }
 
     function displayWeather(response) {
+        console.log(response.data);
         setWeather({
             ready: true,
             date: new Date(response.data.time * 1000),
             city: response.data.city,
             country: response.data.country,
+            coordinates: response.data.coordinates,
             icon: response.data.condition.icon,
             description: response.data.condition.description,
             temperature: Math.round(response.data.temperature.current),
@@ -65,7 +67,7 @@ export default function WeatherSearch() {
                 </header>
                 {searchForm}
                 <WeatherInfo info={weather} />
-                <WeatherForecast />
+                <WeatherForecast coordinates={weather.coordinates} />
             </div>
         );
     } else {
