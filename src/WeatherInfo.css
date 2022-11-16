@@ -1,0 +1,14 @@
+.WeatherInfo .current-weather {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.WeatherInfo .more-info {
+    position: relative;
+    top: 30px;
+    line-height: 2;
+}
+
+.WeatherInfo .current-temperature {
+    font-size: 60px;
+}

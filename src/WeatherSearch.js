@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
@@ -15,12 +13,16 @@ export default function WeatherSearch() {
     const [city, setCity] = useState("");
     const [weather, setWeather] = useState({ ready: false });
 
-    function handleSubmit(event) {
-        event.preventDefault();
+    function axiosCall() {
         let apiKey = "b220773ot9b8ef196b845b21b5cabb26";
         let unit = "metric";
         let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${unit}`;
         axios.get(apiUrl).then(displayWeather);
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        axiosCall();
     }
 
     function displayWeather(response) {
@@ -60,31 +62,7 @@ export default function WeatherSearch() {
                     <FormattedDate date={weather.date} />
                 </header>
                 {searchForm}
-                <Container>
-                    <Row className="justify-content-md-center">
-                        <Col xs lg="3" className="current-weather more-info">
-                            <h2>{weather.name}</h2>
-                            <img
-                                src={weather.iconUrl}
-                                alt={weather.description}
-                            />
-                        </Col>
-                        <Col xs lg="4" className="current-weather">
-                            <div className="current-temperature">
-                                {weather.temperature}°
-                            </div>
-                            <div>23° | 17°</div>
-                            <div className="text-capitalize">
-                                {weather.description}
-                            </div>
-                        </Col>
-                        <Col xs lg="3" className="current-weather more-info">
-                            <div>Feels Like: {weather.feels}°</div>
-                            <div>Wind Speed: {weather.wind}km/h</div>
-                            <div>Humidity: {weather.humidity}%</div>
-                        </Col>
-                    </Row>
-                </Container>
+                <WeatherInfo info={weather} />
             </div>
         );
     } else {
