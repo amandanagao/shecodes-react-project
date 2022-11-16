@@ -37,7 +37,6 @@ export default function WeatherSearch() {
             icon: response.data.condition.icon,
             description: response.data.condition.description,
             temperature: Math.round(response.data.temperature.current),
-            feels: Math.round(response.data.temperature.feels_like),
             humidity: response.data.temperature.humidity,
             wind: Math.round(response.data.wind.speed),
         });

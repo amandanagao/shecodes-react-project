@@ -1,6 +1,7 @@
 .App {
     max-width: 800px;
     margin: 15px auto;
+    color: #282c34;
 }
 
 .App .card {

@@ -7,6 +7,9 @@ import "./WeatherInfo.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWind } from "@fortawesome/free-solid-svg-icons";
+import { faDroplet } from "@fortawesome/free-solid-svg-icons";
 
 export default function WeatherInfo(props) {
     return (
@@ -30,9 +33,14 @@ export default function WeatherInfo(props) {
                         <WeatherTemperature celsius={props.info.temperature} />
                     </Col>
                     <Col xs lg="3" className="current-weather more-info">
-                        <div>Feels Like: {props.info.feels}°C</div>
-                        <div>Wind Speed: {props.info.wind}km/h</div>
-                        <div>Humidity: {props.info.humidity}%</div>
+                        <div>
+                            <FontAwesomeIcon icon={faWind} /> {props.info.wind}
+                            km/h
+                        </div>
+                        <div>
+                            <FontAwesomeIcon icon={faDroplet} />{" "}
+                            {props.info.humidity}%
+                        </div>
                     </Col>
                 </Row>
             </Container>
