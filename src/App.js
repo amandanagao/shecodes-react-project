@@ -14,14 +14,14 @@ export default function App() {
                     <Forecast />
                 </Card>
                 <div className="coder">
+                    This project was coded by Amanda Nagao and is{" "}
                     <a
                         href="https://github.com/amandanagao/shecodes-react-project"
                         target="_blank"
                         rel="noreferrer"
                     >
-                        Open-source code
-                    </a>{" "}
-                    by Amanda Nagao
+                        open-sourced on GitHub
+                    </a>
                 </div>
             </div>
         </div>
