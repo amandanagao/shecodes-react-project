@@ -34,6 +34,11 @@
     cursor: pointer;
 }
 
+.WeatherSearch h2 {
+    text-align: center;
+    color: #345a6d;
+}
+
 .WeatherSearch .loader {
     text-align: center;
 }

@@ -73,6 +73,7 @@ export default function WeatherSearch() {
         return (
             <div className="WeatherSearch">
                 {searchForm}
+                <h2>Please enter a city</h2>
                 <div className="loader">
                     <ColorRing
                         visible={true}
