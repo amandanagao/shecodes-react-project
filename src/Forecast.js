@@ -10,46 +10,11 @@ export default function Forecast() {
         <div className="Forecast">
             <Container>
                 <Row>
-                    <Col>
-                        <img
-                            src="https://ssl.gstatic.com/onebox/weather/48/cloudy_s_rain.png"
-                            alt="weather icon"
-                        ></img>
-                        <div>28° | 19°</div>
-                        <div>Thu</div>
-                    </Col>
-                    <Col>
-                        <img
-                            src="https://ssl.gstatic.com/onebox/weather/48/cloudy_s_rain.png"
-                            alt="weather icon"
-                        ></img>
-                        <div>28° | 19°</div>
-                        <div>Fri</div>
-                    </Col>
-                    <Col>
-                        <img
-                            src="https://ssl.gstatic.com/onebox/weather/48/cloudy_s_rain.png"
-                            alt="weather icon"
-                        ></img>
-                        <div>28° | 19°</div>
-                        <div>Sat</div>
-                    </Col>
-                    <Col>
-                        <img
-                            src="https://ssl.gstatic.com/onebox/weather/48/cloudy_s_rain.png"
-                            alt="weather icon"
-                        ></img>
-                        <div>28° | 19°</div>
-                        <div>Sun</div>
-                    </Col>
-                    <Col>
-                        <img
-                            src="https://ssl.gstatic.com/onebox/weather/48/cloudy_s_rain.png"
-                            alt="weather icon"
-                        ></img>
-                        <div>28° | 19°</div>
-                        <div>Mon</div>
-                    </Col>
+                    <Col></Col>
+                    <Col></Col>
+                    <Col></Col>
+                    <Col></Col>
+                    <Col></Col>
                 </Row>
             </Container>
         </div>

@@ -26,11 +26,11 @@ export default function WeatherSearch() {
     }
 
     function displayWeather(response) {
-        console.log(response);
         setWeather({
             ready: true,
             date: new Date(response.data.time * 1000),
-            name: response.data.city,
+            city: response.data.city,
+            country: response.data.country,
             icon: response.data.condition.icon,
             description: response.data.condition.description,
             temperature: Math.round(response.data.temperature.current),
