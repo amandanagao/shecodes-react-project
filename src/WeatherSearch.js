@@ -6,6 +6,7 @@ import WeatherInfo from "./WeatherInfo";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import { ColorRing } from "react-loader-spinner";
 
 import "./WeatherSearch.css";
 
@@ -69,7 +70,23 @@ export default function WeatherSearch() {
         return (
             <div className="WeatherSearch">
                 {searchForm}
-                <h3>Loading...</h3>
+                <div className="loader">
+                    <ColorRing
+                        visible={true}
+                        height="80"
+                        width="80"
+                        ariaLabel="blocks-loading"
+                        wrapperStyle={{}}
+                        wrapperClass="blocks-wrapper"
+                        colors={[
+                            "#77aac4",
+                            "#588faa",
+                            "#407088",
+                            "#345a6d",
+                            "#39647a",
+                        ]}
+                    />
+                </div>
             </div>
         );
     }
