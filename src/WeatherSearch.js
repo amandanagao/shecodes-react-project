@@ -31,7 +31,7 @@ export default function WeatherSearch() {
             ready: true,
             date: new Date(response.data.time * 1000),
             name: response.data.city,
-            iconUrl: response.data.condition.icon_url,
+            icon: response.data.condition.icon,
             description: response.data.condition.description,
             temperature: Math.round(response.data.temperature.current),
             feels: Math.round(response.data.temperature.feels_like),

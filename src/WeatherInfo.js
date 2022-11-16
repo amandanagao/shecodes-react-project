@@ -1,4 +1,5 @@
 import React from "react";
+import WeatherIcon from "./WeatherIcon";
 
 import "./WeatherInfo.css";
 
@@ -13,10 +14,7 @@ export default function WeatherInfo(props) {
                 <Row className="justify-content-md-center">
                     <Col xs lg="3" className="current-weather more-info">
                         <h2>{props.info.name}</h2>
-                        <img
-                            src={props.info.iconUrl}
-                            alt={props.info.description}
-                        />
+                        <WeatherIcon code={props.info.icon} />
                     </Col>
                     <Col xs lg="4" className="current-weather">
                         <div className="current-temperature">
