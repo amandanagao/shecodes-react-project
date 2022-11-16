@@ -28,7 +28,6 @@ export default function WeatherSearch() {
     }
 
     function displayWeather(response) {
-        console.log(response.data);
         setWeather({
             ready: true,
             date: new Date(response.data.time * 1000),

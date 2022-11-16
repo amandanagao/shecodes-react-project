@@ -11,20 +11,28 @@ export default function WeatherForecast(props) {
     const [forecast, setForecast] = useState(null);
 
     function displayWeatherForecast(response) {
-        console.log(response.data);
         setLoaded(true);
         setForecast(response.data.daily);
     }
 
     if (loaded) {
-        console.log(forecast);
         return (
             <div className="WeatherForecast">
                 <Container>
                     <Row>
-                        <Col>
-                            <WeatherForecastDay data={forecast[1]} />
-                        </Col>
+                        {forecast.map((dailyForecast, index) => {
+                            if (index > 0 && index < 6) {
+                                return (
+                                    <Col key={index}>
+                                        <WeatherForecastDay
+                                            data={dailyForecast}
+                                        />
+                                    </Col>
+                                );
+                            } else {
+                                return null;
+                            }
+                        })}
                     </Row>
                 </Container>
             </div>
