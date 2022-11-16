@@ -1,6 +1,5 @@
 import WeatherSearch from "./WeatherSearch";
 import Forecast from "./Forecast";
-import Units from "./Units";
 
 import Card from "react-bootstrap/Card";
 
@@ -13,7 +12,6 @@ export default function App() {
                 <Card className="card">
                     <WeatherSearch />
                     <Forecast />
-                    <Units />
                 </Card>
                 <div className="coder">
                     <a
