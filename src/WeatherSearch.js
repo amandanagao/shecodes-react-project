@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -64,6 +65,7 @@ export default function WeatherSearch() {
                 </header>
                 {searchForm}
                 <WeatherInfo info={weather} />
+                <WeatherForecast />
             </div>
         );
     } else {
