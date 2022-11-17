@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import WeatherForecastDay from "./WeatherForecastDay";
 
+import "./WeatherForecast.css";
+
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -33,6 +35,9 @@ export default function WeatherForecast(props) {
             <div className="WeatherForecast">
                 <Container>
                     <Row>
+                        <Col className="WeatherForecast-today">
+                            <WeatherForecastDay data={forecast[0]} />
+                        </Col>
                         {forecast.map((dailyForecast, index) => {
                             if (index > 0 && index < 6) {
                                 return (

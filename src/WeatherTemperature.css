@@ -12,12 +12,13 @@
     color: #6f7072;
 }
 
-.WeatherTemperature .units {
+.WeatherTemperature .WeatherTemperature-units {
     position: relative;
     bottom: 35px;
     font-weight: bold;
+    color: #e80064;
 }
 
-.WeatherTemperature .current-temperature {
+.WeatherTemperature .WeatherTemperature-current-temperature {
     font-size: 85px;
 }

@@ -2,18 +2,18 @@
     text-align: center;
     margin-top: 30px;
     font-size: 18px;
+    font-weight: 500;
 }
 
 .WeatherForecastDay .WeatherForecastDay-day {
     font-size: 20px;
-    font-weight: 500;
 }
 
 .WeatherForecastDay .WeatherForecastDay-temperature-max {
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .WeatherForecastDay .WeatherForecastDay-temperature-min {
-    opacity: 70%;
+    opacity: 60%;
     margin-left: 5px;
 }
