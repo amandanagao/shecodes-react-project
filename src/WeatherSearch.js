@@ -12,38 +12,56 @@ import { ColorRing } from "react-loader-spinner";
 import "./WeatherSearch.css";
 
 export default function WeatherSearch() {
-    const [city, setCity] = useState("");
+    const [city, setCity] = useState({});
     const [weather, setWeather] = useState({ ready: false });
 
     function axiosCall() {
-        let apiKey = "b220773ot9b8ef196b845b21b5cabb26";
+        let apiKey = "45bb2b01d47a7c6f32fb06dd72181ea6";
         let unit = "metric";
-        let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${unit}`;
-        axios.get(apiUrl).then(displayWeather);
+        let apiUrl = `https:///api.openweathermap.org/data/2.5/weather?q=${city.name}&appid=${apiKey}&units=${unit}`;
+        axios.get(apiUrl).then(displayWeather).catch(errorCheck);
+    }
+
+    function errorCheck(error) {
+        let returnObject = error.response.data.cod;
+        if (returnObject === "404") {
+            alert(`Please enter a valid city`);
+            setWeather({ ready: false });
+        }
     }
 
     function handleSubmit(event) {
         event.preventDefault();
-        axiosCall();
+        if (city.flag === true) {
+            axiosCall();
+        } else {
+            alert(`Please enter a city`);
+            setCity({ name: " ", flag: false });
+            setWeather({ ready: false });
+        }
     }
 
     function displayWeather(response) {
         setWeather({
             ready: true,
-            date: new Date(response.data.time * 1000),
-            city: response.data.city,
-            country: response.data.country,
-            coordinates: response.data.coordinates,
-            icon: response.data.condition.icon,
-            description: response.data.condition.description,
-            temperature: Math.round(response.data.temperature.current),
-            humidity: response.data.temperature.humidity,
+            date: new Date(response.data.dt * 1000),
+            city: response.data.name,
+            country: response.data.sys.country,
+            coordinates: response.data.coord,
+            icon: response.data.weather[0].icon,
+            description: response.data.weather[0].description,
+            temperature: Math.round(response.data.main.temp),
+            humidity: response.data.main.humidity,
             wind: Math.round(response.data.wind.speed),
         });
     }
 
     function updateCity(event) {
-        setCity(event.target.value);
+        if (event.target.value.trim().length !== 0) {
+            setCity({ name: event.target.value, flag: true });
+        } else {
+            setCity({ name: " ", flag: false });
+        }
     }
 
     let searchForm = (
