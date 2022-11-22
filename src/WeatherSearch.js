@@ -36,7 +36,7 @@ export default function WeatherSearch() {
             axiosCall();
         } else {
             alert(`Please enter a city`);
-            setCity({ name: " ", flag: false });
+            setCity({ name: "", flag: false });
             setWeather({ ready: false });
         }
     }
@@ -60,7 +60,7 @@ export default function WeatherSearch() {
         if (event.target.value.trim().length !== 0) {
             setCity({ name: event.target.value, flag: true });
         } else {
-            setCity({ name: " ", flag: false });
+            setCity({ name: "", flag: false });
         }
     }
 
@@ -78,12 +78,18 @@ export default function WeatherSearch() {
     if (weather.ready) {
         return (
             <div className="WeatherSearch">
-                <header>
-                    <FormattedDate date={weather.date} />
-                </header>
                 {searchForm}
                 <WeatherInfo info={weather} />
                 <WeatherForecast coordinates={weather.coordinates} />
+                <div
+                    style={{
+                        textAlign: "center",
+                        marginTop: "15px",
+                        opacity: 0.7,
+                    }}
+                >
+                    Last Updated: <FormattedDate date={weather.date} />
+                </div>
             </div>
         );
     } else {

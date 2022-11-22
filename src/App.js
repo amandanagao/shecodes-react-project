@@ -1,6 +1,9 @@
 import WeatherSearch from "./WeatherSearch";
 
 import Card from "react-bootstrap/Card";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClock } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarDay } from "@fortawesome/free-solid-svg-icons";
 
 import "./App.css";
 
@@ -9,6 +12,20 @@ export default function App() {
         <div className="App">
             <div className="container">
                 <Card className="card">
+                    <header>
+                        <FontAwesomeIcon icon={faCalendarDay} />{" "}
+                        {new Date().toLocaleDateString("en-US", {
+                            weekday: "long",
+                            day: "numeric",
+                            month: "long",
+                            year: "numeric",
+                        })}
+                        <br />
+                        <FontAwesomeIcon icon={faClock} />{" "}
+                        {new Date().toLocaleTimeString("en-US", {
+                            hour12: false,
+                        })}
+                    </header>
                     <WeatherSearch />
                 </Card>
                 <div className="coder">

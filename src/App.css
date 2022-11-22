@@ -5,15 +5,23 @@
 }
 
 .App .card {
-    padding: 5px 5px 15px;
+    padding: 5px 5px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.App header {
+    text-align: center;
+    background-color: #282c34;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 5px;
 }
 
 .App .coder {
     text-align: center;
     font-size: 13px;
     padding-top: 10px;
-    color: rgb(187, 186, 248);
+    color: white;
 }
 
 .App a {
