@@ -87,7 +87,6 @@ export default function WeatherSearch() {
                 <div
                     style={{
                         textAlign: "center",
-                        marginTop: "20px",
                         opacity: 0.7,
                         fontSize: "15px",
                     }}
