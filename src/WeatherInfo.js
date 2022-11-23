@@ -16,23 +16,29 @@ export default function WeatherInfo(props) {
         <div className="WeatherInfo">
             <Container>
                 <Row className="justify-content-md-center">
-                    <Col xs lg="3" className="current-weather">
-                        <div className="city-country">
-                            <span className="city">{props.info.city}</span>
+                    <Col xs lg="3" className="WeatherInfo-current-weather">
+                        <div className="WeatherInfo-city-country">
+                            <span className="WeatherInfo-city">
+                                {props.info.city}
+                            </span>
                             <br />
-                            <span className="country">
+                            <span className="WeatherInfo-country">
                                 {props.info.country}
                             </span>
                         </div>
                         <WeatherIcon code={props.info.icon} size={64} />
-                        <div className="description text-capitalize">
+                        <div className="WeatherInfo-description text-capitalize">
                             {props.info.description}
                         </div>
                     </Col>
-                    <Col xs lg="4" className="current-weather">
+                    <Col xs lg="4" className="WeatherInfo-current-weather">
                         <WeatherTemperature celsius={props.info.temperature} />
                     </Col>
-                    <Col xs lg="3" className="current-weather more-info">
+                    <Col
+                        xs
+                        lg="3"
+                        className="WeatherInfo-current-weather WeatherInfo-more-info"
+                    >
                         <div>
                             <FontAwesomeIcon icon={faWind} /> {props.info.wind}
                             km/h

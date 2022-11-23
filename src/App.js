@@ -11,7 +11,7 @@ export default function App() {
     return (
         <div className="App">
             <div className="container">
-                <Card className="card">
+                <Card className="App-card">
                     <header>
                         <FontAwesomeIcon icon={faCalendarDay} />{" "}
                         {new Date().toLocaleDateString("en-US", {
@@ -28,7 +28,7 @@ export default function App() {
                     </header>
                     <WeatherSearch />
                 </Card>
-                <div className="coder">
+                <div className="App-coder">
                     This project was coded by Amanda Nagao and is{" "}
                     <a
                         href="https://github.com/amandanagao/shecodes-react-project"

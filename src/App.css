@@ -4,7 +4,7 @@
     color: #282c34;
 }
 
-.App .card {
+.App .App-card {
     padding: 5px 5px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
@@ -17,7 +17,7 @@
     padding: 5px;
 }
 
-.App .coder {
+.App .App-coder {
     text-align: center;
     font-size: 13px;
     padding-top: 10px;

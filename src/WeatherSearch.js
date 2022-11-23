@@ -66,7 +66,10 @@ export default function WeatherSearch() {
 
     let searchForm = (
         <form onSubmit={handleSubmit}>
-            <InputGroup className="search-form" onChange={updateCity}>
+            <InputGroup
+                className="WeatherSearch-search-form"
+                onChange={updateCity}
+            >
                 <Form.Control placeholder="Enter a city" />
                 <Button type="submit" variant="outline-secondary">
                     Search
@@ -84,8 +87,9 @@ export default function WeatherSearch() {
                 <div
                     style={{
                         textAlign: "center",
-                        marginTop: "15px",
+                        marginTop: "20px",
                         opacity: 0.7,
+                        fontSize: "15px",
                     }}
                 >
                     Last Updated: <FormattedDate date={weather.date} />
@@ -97,7 +101,7 @@ export default function WeatherSearch() {
             <div className="WeatherSearch">
                 {searchForm}
                 <h2>Please enter a city</h2>
-                <div className="loader">
+                <div className="WeatherSearch-loader">
                     <ColorRing
                         visible={true}
                         height="80"
