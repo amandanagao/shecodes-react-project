@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { ColorRing } from "react-loader-spinner";
+import Swal from "sweetalert2";
 
 import "./WeatherSearch.css";
 
@@ -25,7 +26,11 @@ export default function WeatherSearch() {
     function errorCheck(error) {
         let returnObject = error.response.data.cod;
         if (returnObject === "404") {
-            alert(`Please enter a valid city`);
+            Swal.fire({
+                icon: "error",
+                title: "Error!",
+                text: "Please enter a valid city!",
+            });
             setWeather({ ready: false });
         }
     }
@@ -35,7 +40,11 @@ export default function WeatherSearch() {
         if (city.flag === true) {
             axiosCall();
         } else {
-            alert(`Please enter a city`);
+            Swal.fire({
+                icon: "error",
+                title: "Error!",
+                text: "Please enter a city!",
+            });
             setCity({ name: "", flag: false });
             setWeather({ ready: false });
         }
