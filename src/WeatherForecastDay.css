@@ -6,6 +6,12 @@
     border: 1px solid rgba(40, 44, 52, 0.3);
     border-radius: 10px;
     padding: 10px;
+    transition: all 150ms ease-in-out;
+}
+
+.WeatherForecastDay:hover {
+    border: 1px solid #282c34;
+    transform: scale(1.2);
 }
 
 .WeatherForecastDay .WeatherForecastDay-day {
