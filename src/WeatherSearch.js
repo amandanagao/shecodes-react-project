@@ -79,7 +79,7 @@ export default function WeatherSearch() {
                 className="WeatherSearch-search-form"
                 onChange={updateCity}
             >
-                <Form.Control placeholder="Enter a city" />
+                <Form.Control placeholder="Enter a city" autoFocus />
                 <Button type="submit" variant="outline-secondary">
                     Search
                 </Button>
