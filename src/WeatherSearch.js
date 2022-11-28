@@ -57,6 +57,7 @@ export default function WeatherSearch() {
             city: response.data.name,
             country: response.data.sys.country,
             coordinates: response.data.coord,
+            feels: Math.round(response.data.main.feels_like),
             icon: response.data.weather[0].icon,
             description: response.data.weather[0].description,
             temperature: Math.round(response.data.main.temp),

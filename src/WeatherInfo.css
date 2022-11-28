@@ -21,6 +21,21 @@
     font-style: italic;
 }
 
+.WeatherInfo .WeatherInfo-temperature {
+    font-size: 85px;
+}
+
+.WeatherInfo .WeatherInfo-feels {
+    font-style: italic;
+    opacity: 80%;
+}
+
+.WeatherInfo .WeatherInfo-unit {
+    font-size: 45px;
+    position: relative;
+    bottom: 28px;
+}
+
 .WeatherInfo .WeatherInfo-more-info {
     line-height: 2;
     font-size: 18px;
