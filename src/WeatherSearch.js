@@ -119,11 +119,11 @@ export default function WeatherSearch() {
                         wrapperStyle={{}}
                         wrapperClass="blocks-wrapper"
                         colors={[
-                            "#77aac4",
-                            "#588faa",
-                            "#407088",
-                            "#345a6d",
-                            "#39647a",
+                            "#D3D5D0",
+                            "#D3D5C2",
+                            "#C8D59D",
+                            "#A7C68B",
+                            "#B9DB9A",
                         ]}
                     />
                 </div>

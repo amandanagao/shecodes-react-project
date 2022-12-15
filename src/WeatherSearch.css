@@ -4,8 +4,8 @@
 
 .WeatherSearch h2 {
     text-align: center;
-    color: #282c34;
     font-size: 20px;
+    color: #fc6b58;
 }
 
 .WeatherSearch .WeatherSearch-search-form {
@@ -27,14 +27,9 @@
 }
 
 .WeatherSearch button:hover {
-    background: #282c34;
+    background: #465c47;
     color: white;
     cursor: pointer;
-}
-
-.WeatherSearch h2 {
-    text-align: center;
-    color: #345a6d;
 }
 
 .WeatherSearch .WeatherSearch-loader {
