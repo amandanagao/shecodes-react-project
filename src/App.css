@@ -1,7 +1,7 @@
 .App {
     max-width: 800px;
     margin: 15px auto;
-    color: #465c47;
+    color: #443F43;
 }
 
 .App .App-card {
@@ -10,7 +10,7 @@
 }
 .App header {
     text-align: center;
-    background-color: #465c47;
+    background-color: #DA5663;
     color: white;
     border-radius: 5px;
     font-size: 20px;
@@ -19,12 +19,12 @@
 
 .App .App-coder {
     text-align: center;
-    font-size: 13px;
+    font-size: 15px;
     padding-top: 10px;
-    color: #465c47;
+    color: #443F43;
 }
 
 .App a {
     text-decoration: none;
-    color: #fb5b46;
+    color: #DA5663;
 }
